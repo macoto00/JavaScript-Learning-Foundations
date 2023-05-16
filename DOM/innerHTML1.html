@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Workshop: innerHTML, textContent</title>
+  </head>
+  <body>
+    <p class="apple">apple</p>
+    <p class="balloon">banana</p>
+    <p class="cat">car</p>
+    <p class="animals">goat rabbit <strong>cat</strong> dog</p>
+
+    <!-- You can work in the html or in a separate js file. Like: -->
+
+    <script>
+      // 1)  Append the content of the last paragraph to the other paragraphs.
+      let whatToAppend = document.querySelector(".animals").textContent;
+
+      document.querySelector(".apple").append(whatToAppend);
+      document.querySelector(".balloon").append(whatToAppend);
+      document.querySelector(".cat").append(whatToAppend);
+
+      // 2)  Do the same again, but you should keep the cat strong.
+      let whatToAppendWithHTML = document.querySelector(".animals").innerHTML;
+
+      document.querySelector(".apple").innerHTML += whatToAppendWithHTML;
+      document.querySelector(".balloon").innerHTML += whatToAppendWithHTML;
+      document.querySelector(".cat").innerHTML += whatToAppendWithHTML;
+    </script>
+
+    <!-- OR -->
+
+    <!-- <script src="content-1.js"></script> -->
+  </body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Workshop: onclick</title>
+    <style>
+      body {
+        margin: 0;
+      }
+
+      div {
+        height: 100vh;
+      }
+
+      .party {
+        background: url(https://media.giphy.com/media/4c4jQPdVv381G/giphy.gif);
+      }
+    </style>
+  </head>
+
+  <body>
+    <div>
+      <button>Party</button>
+    </div>
+
+    <!-- You can work in the html or in a separate js file. Like: -->
+
+    <script>
+      //   Turn the party (i.e. the whole page background) on and off by clicking the button.
+      let button = document.querySelector("button");
+      let div = document.querySelector("div"); 
+
+      button.onclick = () => {
+        if (!div.classList.contains("party")) { 
+          div.classList.add("party");
+        } else {
+          div.classList.remove("party"); 
+        }
+      };
+    </script>
+
+    <!-- OR -->
+
+    <!-- <script src="events-1.js"></script> -->
+  </body>
+</html>
