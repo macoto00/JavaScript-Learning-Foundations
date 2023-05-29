@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>IP Location Map</title>
+    <style>
+        #map {
+            width: 100%;
+            height: 400px;
+        }
+    </style>
+    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_GOOGLE_MAPS_API_KEY"></script>
+</head>
+
+<body>
+    <h2>IP Location Map</h2>
+    <input type="text" id="ipInput" placeholder="Enter IP address">
+    <button onclick="getLocation()">Get Location</button>
+    <div id="map"></div>
+
+    <script src="api.js"></script>
+</body>
+
+</html>
