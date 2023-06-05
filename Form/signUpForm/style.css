@@ -1,0 +1,168 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;1,100;1,300;1,400;1,500&display=swap');
+
+html {
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #dddddd;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    border: solid black 1px;
+    width: 50%;
+    height: auto;
+    padding: 2rem;
+    background-color: #ffffff;
+    border-radius: 10px;
+    -webkit-box-shadow: 0px 0px 21px 0px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 0px 0px 21px 0px rgba(0, 0, 0, 0.75);
+    box-shadow: 0px 0px 21px 0px rgba(0, 0, 0, 0.75);
+}
+
+.content {
+    display: grid;
+    grid-template-columns: 45% 10% 45%;
+}
+
+h1 {
+    font-weight: 400;
+}
+
+.left {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-right: 1rem;
+}
+
+.middle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.right {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 1rem;
+}
+
+form {}
+
+input {
+    width: 100%;
+    border: none;
+    border-bottom: 2px rgb(196, 196, 196) solid;
+    margin-top: 2rem;
+    outline: none;
+    font-size: large;
+}
+
+input[name="username"]::placeholder,
+input[name="email"]::placeholder,
+input[name="password"]::placeholder,
+input[name="passwordAgain"]::placeholder {
+    color: rgb(143, 143, 143);
+    font-weight: 200;
+    font-size: smaller
+}
+
+input:focus {
+    border-color: rgb(0, 170, 0);
+}
+
+button {
+    margin-top: 2rem;
+    text-transform: uppercase;
+    padding: 10px;
+    height: 50px;
+    width: 150px;
+    border: none;
+    background-color: #4a9e86;
+    color: #ffffff;
+    font-weight: bold;
+    font-size: large;
+    border-radius: 10px;
+}
+
+button:hover {
+    cursor: pointer;
+    background-color: #57b99d;
+}
+
+p {
+    text-align: center;
+    background-color: grey;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #ffffff;
+    text-transform: uppercase;
+}
+
+a {
+    margin-bottom: 2rem;
+    text-decoration: none;
+    width: 100%;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #ffffff;
+    border-radius: 10px;
+}
+
+.facebook {
+    background-color: #394f8a;
+}
+
+.twitter {
+    background-color: #6baae8;
+}
+
+.google {
+    background-color: #cc5542;
+}
+
+@media only screen and (max-width: 600px) {
+    .container {
+        margin-top: 10rem;
+        width: 70%;
+    }
+
+    .content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    form {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .right {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: 0;
+        width: 100%;
+    }
+}

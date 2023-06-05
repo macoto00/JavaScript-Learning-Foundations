@@ -1,0 +1,85 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;1,100;1,300;1,400;1,500&display=swap');
+
+html {
+    height: 100vh;
+    width: 100vw;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-image: linear-gradient(to right top, #df6e75, #dd7568, #d87e5e, #d18656, #c88f52);
+}
+
+.container {
+    width: 40%;
+    height: auto;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    border-radius: 50px;
+    -webkit-box-shadow: 20px 20px 41px 11px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 20px 20px 41px 11px rgba(0, 0, 0, 0.75);
+    box-shadow: 20px 20px 41px 11px rgba(0, 0, 0, 0.75);
+    background-color: #ffffff;
+}
+
+h1 {
+    text-transform: uppercase;
+    font-weight: 200;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+p {
+    display: flex;
+    flex-direction: column;
+    text-transform: uppercase;
+    font-size: 12px;
+    margin-left: 1rem;
+}
+
+input {
+    height: 40px;
+    border-radius: 25px;
+    padding-left: 20px;
+    margin-bottom: 1rem;
+    transition: border-color 0.3s ease;
+    outline: none;
+    border: none;
+    background-image: linear-gradient(to right, #e1e1e1, #ffffff);
+}
+
+button {
+    width: 120px;
+    height: 50px;
+    margin: auto;
+    margin-top: 1rem;
+    padding: 10px;
+    border: none;
+    border-radius: 25px;
+    color: rgb(255, 255, 255);
+    text-transform: uppercase;
+    font-weight: bolder;
+    font-size: larger;
+    background-image: linear-gradient(to right, #659df2, #71eab9);
+}
+
+button:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+@media only screen and (max-width: 600px) {
+    .container {
+        width: 70%;
+    }
+}
