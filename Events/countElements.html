@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Workshop: EventListeners</title>
+</head>
+
+<body>
+    <ul>
+        <li>apple</li>
+        <li>balloon</li>
+        <li>cat</li>
+        <li>dolphin</li>
+    </ul>
+    <button>How many items are in the list?</button>
+    <p class="result">dunno :(</p>
+    <p class="result2">dunno :(</p>
+
+    <script>
+        //   On the click of the button,
+        //   Count the items in the list
+        //   And display the result in the result element.
+
+        let button = document.querySelector("button");
+        let list = document.querySelectorAll("li");
+        let result = document.querySelector(".result");
+        let result2 = document.querySelector(".result2");
+
+        button.addEventListener("click", () => {
+            let length = list.length;
+
+            // this way
+            result.textContent = `The list contains ${length} items.`;
+            
+            // or this way
+            result2.textContent = "The list contains " + length + " items.";
+        })
+
+    </script>
+
+</body>
+
+</html>

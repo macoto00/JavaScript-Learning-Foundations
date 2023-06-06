@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Delayed Click</title>
+</head>
+
+<body>
+  <button id="delayedButton">Click me</button>
+  <h1 id="result" style="display: none;">2 seconds elapsed</h1>
+
+  <script>
+    // Create a simple HTML document with one button. 
+    // If the user clicks the button it should wait 2 seconds 
+    // and it should show a text under the button: 2 seconds elapsed
+
+    let button = document.querySelector("button");
+    let result = document.querySelector("#result");
+
+    button.addEventListener("click", () => {
+
+      result.style.display = "none";
+      delayedButton.disabled = true;
+
+      setTimeout(() => {
+        delayedButton.disabled = false;
+        result.style.display = "block";
+      }, 2000);
+    })
+
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <style>
+    body {
+      font-family: arial;
+    }
+  </style>
+  <meta charset="UTF-8">
+  <title>Candy shop</title>
+</head>
+
+<body>
+  <h1>🍬Candy shop🍬</h1>
+  <dl class="stats">
+    <dt>Candies</dt>
+    <dd class="candies">6000</dd>
+    <dt>Lollypops</dt>
+    <dd class="lollypops">🍭🍭🍭</dd>
+    <dt>Candies / Second</dt>
+    <dd class="speed">0</dd>
+  </dl>
+  <button class="create-candies">Create candies</button>
+  <button class="buy-lollypops">Buy Lollypops</button>
+  <button class="candy-machine">Make candy rain</button>
+  <script>
+    // - Gather 10,000 candies!
+    // - Clicking the ‘Create candies’ button gives you 1 candy.
+    // - You can buy a lollipop for 100 candies by clicking the ‘Buy lollipop’ button.
+    // - 10 lollipops generate 1 candy per second.
+    //   - Use the 🍭 emoji to display the lollipops you have.
+    // - Display the candy production rate in the `Candies / Second` row.
+    // - If you press the "make candy rain" button, the candy generation should speed up 10x.
+
+    const createCandiesButton = document.querySelector(".create-candies");
+    const buyLollypopsButton = document.querySelector(".buy-lollypops");
+    const candyMachineButton = document.querySelector(".candy-machine");
+    const candiesDisplay = document.querySelector(".candies");
+    const lollypopsDisplay = document.querySelector(".lollypops");
+    const speedDisplay = document.querySelector(".speed");
+
+    let candies = 6000;
+    let lollypops = 3;
+    let candyProductionRate = 0;
+    let candyRainActive = false;
+
+    createCandiesButton.addEventListener("click", () => {
+      candies++;
+      updateCandiesDisplay();
+    });
+
+    buyLollypopsButton.addEventListener("click", () => {
+      if (candies >= 100) {
+        lollypops++;
+        candies -= 100;
+        updateCandiesDisplay();
+        updateLollypopsDisplay();
+      }
+      if (lollypops % 10 === 0) {
+        candyProductionRate = Math.floor(lollypops / 10);
+        candyRainActive = false;
+        updateSpeedDisplay();
+      } 
+    });
+
+    candyMachineButton.addEventListener("click", () => {
+      candyRainActive = !candyRainActive;
+      if (candyRainActive) {
+        candyProductionRate *= 10;
+      } else {
+        candyProductionRate /= 10;
+      }
+      updateSpeedDisplay();
+    });
+
+    setInterval(() => {
+      if (lollypops >= 10) {
+        candies += candyProductionRate;
+        updateCandiesDisplay();
+      }
+    }, 1000);
+
+    function updateCandiesDisplay() {
+      candiesDisplay.textContent = candies;
+    }
+
+    function updateLollypopsDisplay() {
+      lollypopsDisplay.textContent = "🍭".repeat(lollypops);
+    }
+
+    function updateSpeedDisplay() {
+      speedDisplay.textContent = candyProductionRate;
+    }
+
+  </script>
+</body>
+
+</html>

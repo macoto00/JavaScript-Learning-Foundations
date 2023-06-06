@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Workshop: EventListeners</title>
+</head>
+
+<body>
+    <button>Click me</button>
+
+    <script>
+        //   Create an event listener which logs the current timestamp to the console once the button is clicked.
+        //   When the button is clicked for the second or any other times no event listener should be called.
+        //   Try to solve this two different ways.
+        //   hint: take a look at the button attributes https://developer.mozilla.org/en-US/docs/Web/HTML/Element/button
+
+        let button = document.querySelector("button");
+
+        function logTimestamp() {
+            let seconds = (new Date()).getSeconds();
+            let minutes = (new Date()).getMinutes();
+            let hours = (new Date()).getHours();
+            let day = (new Date()).getDate();
+            let month = (new Date()).getMonth();
+            let year = (new Date()).getFullYear();
+            let result = `Time: ${hours}:${minutes}:${seconds} - Date: ${day}.${month}.${year}`;
+
+            // console.log the result
+            console.log(result);
+
+            // add the result to the html
+            let newParagraph = document.createElement("h1");
+            newParagraph.innerText = result;
+
+            // remove the previously displayed result
+            const previousParagraph = document.querySelector("h1");
+            if (previousParagraph) {
+                previousParagraph.remove();
+            }
+
+            document.body.appendChild(newParagraph);
+
+            button.removeEventListener("click", logTimestamp)
+        }
+
+        button.addEventListener("click", logTimestamp);
+
+    </script>
+
+</body>
+
+</html>

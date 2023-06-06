@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Click Three Times</title>
+</head>
+
+<body>
+    <button>Click me</button>
+    <h1 id="result" style="display: none;">5 seconds elapsed and clicked 3 times</h1>
+
+    <script>
+        // Create a simple HTML document with one button.
+        // If the user clicks the button 3 times, and 5 seconds 
+        // is already elapsed since the page is loaded, a text 
+        // should appear under the button: 5 seconds elapsed and clicked 3 times
+        // If the user starts clicking before the first 5 seconds, nothing should be printed
+
+        let button = document.querySelector("button");
+        let result = document.querySelector("#result");
+        let counter = 0;
+        let timer = false;
+
+        setTimeout(() => {
+                timer = true;
+            }, 5000);
+
+            button.addEventListener("click", () => {
+            if (timer === true) {
+                counter++;
+                if (counter === 3) {
+                    result.style.display = "block";
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>
